@@ -1,4 +1,6 @@
 import React from 'react'
+
+import App from './App'
 import { Store } from './Store'
 import { IEpisodeProps } from './interfaces'
 import { toggleFavAction } from './Actions'
@@ -16,10 +18,12 @@ export default function FavPage(): JSX.Element {
   }
 
   return (
-    <React.Suspense fallback={<div>loading...</div>}>
-      <div className='episode-layout'>
-        <EpisodeList {...props} />
-      </div>
-    </React.Suspense>
+    <App>
+      <React.Suspense fallback={<div>loading...</div>}>
+        <div className='episode-layout'>
+          <EpisodeList {...props} />
+        </div>
+      </React.Suspense>
+    </App>
   )
 }

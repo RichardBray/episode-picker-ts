@@ -1,4 +1,6 @@
-import React, {LazyExoticComponent} from 'react'
+import React from 'react'
+
+import App from './App'
 import { Store } from './Store'
 import { IEpisodeProps } from './interfaces'
 import { fetchDataAction, toggleFavAction } from './Actions'
@@ -20,12 +22,12 @@ export default function HomePage() {
   }
 
   return (
-    <React.Fragment>
+    <App>
       <React.Suspense fallback={<div>loading...</div>}>
         <section className='episode-layout'>
           <EpisodeList {...props} />
         </section>
       </React.Suspense>
-    </React.Fragment>
+    </App>
   )
 }
